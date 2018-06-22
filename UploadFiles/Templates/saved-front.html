@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Lista de Imagens Carregadas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <style>
+        img:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+            border: 3px solid black;
+            border-radius: 30px;
+
+            -moz-transition: transform 250ms linear;
+            -o-transition: transform 250ms linear;
+            -webkit-transition: transform 250ms linear;
+            transition: transform 250ms linear;
+
+            background: no-repeat rgba(226, 12, 12, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                <br>
+                <h2>Listagem de Imagens Carregadas</h2>
+                <br><hr><br>
+                {% for i in lista %}
+                    <span><a href="/apagar-imagem/{{i.1}}"><img src="/static/Downloads/{{i.1}}?h={{horario}}" width="20%" height="25%" style="padding: 5px" alt="Imagem"></a></span>
+                {% endfor %}
+                <br><hr><br>
+                <a href="/"><p>Voltar à Página de Carregamento</p></a>
+                <h6><strong>Cristiano Carvalho Modesto</strong></h6>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
